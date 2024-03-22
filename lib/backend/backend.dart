@@ -8,6 +8,7 @@ import 'schema/util/firestore_util.dart';
 import 'schema/admin_record.dart';
 import 'schema/scanned_outputs_record.dart';
 import 'schema/feedback_record.dart';
+import 'schema/mess_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -18,6 +19,7 @@ export 'schema/util/schema_util.dart';
 export 'schema/admin_record.dart';
 export 'schema/scanned_outputs_record.dart';
 export 'schema/feedback_record.dart';
+export 'schema/mess_record.dart';
 
 /// Functions to query AdminRecords (as a Stream and as a Future).
 Future<int> queryAdminRecordCount({
@@ -130,6 +132,43 @@ Future<List<FeedbackRecord>> queryFeedbackRecordOnce({
       singleRecord: singleRecord,
     );
 
+/// Functions to query MessRecords (as a Stream and as a Future).
+Future<int> queryMessRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      MessRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<MessRecord>> queryMessRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      MessRecord.collection,
+      MessRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<MessRecord>> queryMessRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      MessRecord.collection,
+      MessRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
 Future<int> queryCollectionCount(
   Query collection, {
   Query Function(Query)? queryBuilder,
@@ -194,6 +233,21 @@ Future<List<T>> queryCollectionOnce<T>(
       .where((d) => d != null)
       .map((d) => d!)
       .toList());
+}
+
+extension FilterExtension on Filter {
+  Filter filterIn(String field, List? list) => (list?.isEmpty ?? true)
+      ? Filter(field, whereIn: null)
+      : Filter(field, whereIn: list);
+
+  Filter filterNotIn(String field, List? list) => (list?.isEmpty ?? true)
+      ? Filter(field, whereNotIn: null)
+      : Filter(field, whereNotIn: list);
+
+  Filter filterArrayContainsAny(String field, List? list) =>
+      (list?.isEmpty ?? true)
+          ? Filter(field, arrayContainsAny: null)
+          : Filter(field, arrayContainsAny: list);
 }
 
 extension QueryExtension on Query {

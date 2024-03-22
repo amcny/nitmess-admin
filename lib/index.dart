@@ -4,3 +4,5 @@ export '/pages/login/login_widget.dart' show LoginWidget;
 export '/pages/onboarding/onboarding_widget.dart' show OnboardingWidget;
 export '/pages/logs/logs_widget.dart' show LogsWidget;
 export '/pages/feedbacks/feedbacks_widget.dart' show FeedbacksWidget;
+export '/pages/menuindex/menuindex_widget.dart' show MenuindexWidget;
+export '/pages/menudetails/menudetails_widget.dart' show MenudetailsWidget;
