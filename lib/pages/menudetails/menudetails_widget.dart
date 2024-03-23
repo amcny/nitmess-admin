@@ -240,6 +240,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
+                                            lineHeight: 2.5,
                                           ),
                                       maxLines: null,
                                       validator: _model.textController1Validator
