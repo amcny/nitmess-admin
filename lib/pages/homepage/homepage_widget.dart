@@ -89,7 +89,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                     type: PageTransitionType.fade,
                                     child: FlutterFlowExpandedImageView(
                                       image: Image.asset(
-                                        'assets/images/ps_icon.png',
+                                        'assets/images/MESS_ICON.png',
                                         fit: BoxFit.contain,
                                       ),
                                       allowRotation: false,
@@ -105,7 +105,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(40.0),
                                   child: Image.asset(
-                                    'assets/images/ps_icon.png',
+                                    'assets/images/MESS_ICON.png',
                                     width: 48.0,
                                     height: 48.0,
                                     fit: BoxFit.cover,
@@ -186,31 +186,22 @@ class _HomepageWidgetState extends State<HomepageWidget> {
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 15.0, 5.0),
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    context.pushNamed('menuindex');
-                  },
-                  child: Container(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 60.0,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).primary,
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
-                      child: Text(
-                        dateTimeFormat('EEEE', getCurrentTimestamp),
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).titleLarge.override(
-                              fontFamily: 'Poppins',
-                              color: Colors.white,
-                            ),
-                      ),
+                child: Container(
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: 60.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).primary,
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  child: Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: Text(
+                      dateTimeFormat('EEEE', getCurrentTimestamp),
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.of(context).titleLarge.override(
+                            fontFamily: 'Poppins',
+                            color: Colors.white,
+                          ),
                     ),
                   ),
                 ),

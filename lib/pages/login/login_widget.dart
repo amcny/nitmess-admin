@@ -140,33 +140,34 @@ class _LoginWidgetState extends State<LoginWidget> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(
-                          'Log In',
-                          style: FlutterFlowTheme.of(context)
-                              .displaySmall
-                              .override(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w600,
-                              ),
+                        Align(
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          child: Text(
+                            'Log In',
+                            style: FlutterFlowTheme.of(context)
+                                .displaySmall
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w600,
+                                ),
+                          ),
                         ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 5.0, 0.0, 24.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                'Using Admin credentials only',
-                                style: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 12.0,
-                                    ),
-                              ),
-                            ],
+                        Align(
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 5.0, 0.0, 24.0),
+                            child: Text(
+                              'Using Admin credentials only',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 12.0,
+                                  ),
+                            ),
                           ),
                         ),
                         Padding(

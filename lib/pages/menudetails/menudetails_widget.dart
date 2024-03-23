@@ -262,7 +262,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           color: Colors.white,
                                         ),
                                       ),
-                                      duration: const Duration(milliseconds: 300),
+                                      duration: const Duration(milliseconds: 1000),
                                       backgroundColor:
                                           FlutterFlowTheme.of(context).primary,
                                     ),

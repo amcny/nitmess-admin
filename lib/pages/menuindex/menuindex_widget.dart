@@ -1,9 +1,11 @@
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'menuindex_model.dart';
 export 'menuindex_model.dart';
@@ -15,15 +17,39 @@ class MenuindexWidget extends StatefulWidget {
   State<MenuindexWidget> createState() => _MenuindexWidgetState();
 }
 
-class _MenuindexWidgetState extends State<MenuindexWidget> {
+class _MenuindexWidgetState extends State<MenuindexWidget>
+    with TickerProviderStateMixin {
   late MenuindexModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = {
+    'listViewOnActionTriggerAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onActionTrigger,
+      applyInitialState: true,
+      effects: [
+        MoveEffect(
+          curve: Curves.linear,
+          delay: 0.ms,
+          duration: 200.ms,
+          begin: const Offset(0.0, 22.0),
+          end: const Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+  };
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => MenuindexModel());
+
+    setupAnimations(
+      animationsMap.values.where((anim) =>
+          anim.trigger == AnimationTrigger.onActionTrigger ||
+          !anim.applyInitialState),
+      this,
+    );
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -47,23 +73,14 @@ class _MenuindexWidgetState extends State<MenuindexWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
-          title: InkWell(
-            splashColor: Colors.transparent,
-            focusColor: Colors.transparent,
-            hoverColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onTap: () async {
-              context.pushNamed('homepage');
-            },
-            child: Text(
-              'Mess Menu',
-              style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Poppins',
-                    color: FlutterFlowTheme.of(context).primaryText,
-                    fontSize: 22.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-            ),
+          title: Text(
+            'Mess Menu',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Poppins',
+                  color: FlutterFlowTheme.of(context).primaryText,
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           actions: const [],
           centerTitle: false,
@@ -195,6 +212,8 @@ class _MenuindexWidgetState extends State<MenuindexWidget> {
                           ),
                         );
                       },
+                    ).animateOnActionTrigger(
+                      animationsMap['listViewOnActionTriggerAnimation']!,
                     );
                   },
                 ),
