@@ -26,6 +26,8 @@ class _ScanneddetailsWidgetState extends State<ScanneddetailsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ScanneddetailsModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

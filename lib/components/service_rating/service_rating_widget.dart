@@ -31,6 +31,8 @@ class _ServiceRatingWidgetState extends State<ServiceRatingWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ServiceRatingModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

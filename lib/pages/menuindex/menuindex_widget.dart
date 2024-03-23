@@ -24,6 +24,8 @@ class _MenuindexWidgetState extends State<MenuindexWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => MenuindexModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

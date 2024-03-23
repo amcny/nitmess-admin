@@ -44,6 +44,8 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
     _model.textFieldFocusNode3 ??= FocusNode();
 
     _model.textFieldFocusNode4 ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -184,7 +186,6 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                         text: menudetailsMessRecord.breakfast,
                                       ),
                                       focusNode: _model.textFieldFocusNode1,
-                                      textInputAction: TextInputAction.done,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
@@ -240,7 +241,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           .override(
                                             fontFamily: 'Poppins',
                                           ),
-                                      keyboardType: TextInputType.streetAddress,
+                                      maxLines: null,
                                       validator: _model.textController1Validator
                                           .asValidator(context),
                                     ),
@@ -251,7 +252,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                 onPressed: () async {
                                   await widget.messDocRef!
                                       .update(createMessRecordData(
-                                    breakfast: menudetailsMessRecord.breakfast,
+                                    breakfast: _model.textController1.text,
                                   ));
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
@@ -316,7 +317,6 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                         text: menudetailsMessRecord.lunch,
                                       ),
                                       focusNode: _model.textFieldFocusNode2,
-                                      textInputAction: TextInputAction.done,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
@@ -372,7 +372,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           .override(
                                             fontFamily: 'Poppins',
                                           ),
-                                      keyboardType: TextInputType.streetAddress,
+                                      maxLines: null,
                                       validator: _model.textController2Validator
                                           .asValidator(context),
                                     ),
@@ -448,7 +448,6 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                         text: menudetailsMessRecord.snacks,
                                       ),
                                       focusNode: _model.textFieldFocusNode3,
-                                      textInputAction: TextInputAction.done,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
@@ -504,7 +503,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           .override(
                                             fontFamily: 'Poppins',
                                           ),
-                                      keyboardType: TextInputType.streetAddress,
+                                      maxLines: null,
                                       validator: _model.textController3Validator
                                           .asValidator(context),
                                     ),
@@ -580,7 +579,6 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                         text: menudetailsMessRecord.dinner,
                                       ),
                                       focusNode: _model.textFieldFocusNode4,
-                                      textInputAction: TextInputAction.done,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
@@ -636,7 +634,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           .override(
                                             fontFamily: 'Poppins',
                                           ),
-                                      keyboardType: TextInputType.streetAddress,
+                                      maxLines: null,
                                       validator: _model.textController4Validator
                                           .asValidator(context),
                                     ),

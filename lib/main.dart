@@ -70,7 +70,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'NIT MESS ADMIN',
+      title: 'messadmin',
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -146,8 +146,12 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.home_outlined,
+              Icons.menu_book_rounded,
               size: 24.0,
+            ),
+            activeIcon: Icon(
+              Icons.menu_book_rounded,
+              size: 27.0,
             ),
             label: 'Home',
             tooltip: '',

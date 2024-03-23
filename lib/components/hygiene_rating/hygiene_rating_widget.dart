@@ -31,6 +31,8 @@ class _HygieneRatingWidgetState extends State<HygieneRatingWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HygieneRatingModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

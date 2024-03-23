@@ -31,6 +31,8 @@ class _FoodRatingWidgetState extends State<FoodRatingWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => FoodRatingModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

@@ -40,6 +40,8 @@ class _FbStatusWidgetState extends State<FbStatusWidget> {
     _model.textController ??=
         TextEditingController(text: widget.fbdoc?.fbDoc.mgmt);
     _model.textFieldFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

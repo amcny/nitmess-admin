@@ -25,6 +25,8 @@ class _LogsWidgetState extends State<LogsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => LogsModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
