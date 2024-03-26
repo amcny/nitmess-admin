@@ -4,7 +4,9 @@ import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/passcode_components/pincode_set/pincode_set_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'menuindex_model.dart';
@@ -24,9 +26,8 @@ class _MenuindexWidgetState extends State<MenuindexWidget>
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   final animationsMap = {
-    'listViewOnActionTriggerAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onActionTrigger,
-      applyInitialState: true,
+    'listViewOnPageLoadAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
       effects: [
         MoveEffect(
           curve: Curves.linear,
@@ -44,12 +45,26 @@ class _MenuindexWidgetState extends State<MenuindexWidget>
     super.initState();
     _model = createModel(context, () => MenuindexModel());
 
-    setupAnimations(
-      animationsMap.values.where((anim) =>
-          anim.trigger == AnimationTrigger.onActionTrigger ||
-          !anim.applyInitialState),
-      this,
-    );
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await showModalBottomSheet(
+        isScrollControlled: true,
+        backgroundColor: Colors.transparent,
+        enableDrag: false,
+        context: context,
+        builder: (context) {
+          return GestureDetector(
+            onTap: () => _model.unfocusNode.canRequestFocus
+                ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+                : FocusScope.of(context).unfocus(),
+            child: Padding(
+              padding: MediaQuery.viewInsetsOf(context),
+              child: const PincodeSetWidget(),
+            ),
+          );
+        },
+      ).then((value) => safeSetState(() {}));
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -164,6 +179,10 @@ class _MenuindexWidgetState extends State<MenuindexWidget>
                                     listViewMessRecord.reference,
                                     ParamType.DocumentReference,
                                   ),
+                                  'messname': serializeParam(
+                                    _model.radioButtonValue,
+                                    ParamType.String,
+                                  ),
                                 }.withoutNulls,
                               );
                             },
@@ -187,7 +206,7 @@ class _MenuindexWidgetState extends State<MenuindexWidget>
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        listViewMessRecord.day,
+                                        '${_model.radioButtonValue}: ${listViewMessRecord.day}',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -212,9 +231,8 @@ class _MenuindexWidgetState extends State<MenuindexWidget>
                           ),
                         );
                       },
-                    ).animateOnActionTrigger(
-                      animationsMap['listViewOnActionTriggerAnimation']!,
-                    );
+                    ).animateOnPageLoad(
+                        animationsMap['listViewOnPageLoadAnimation']!);
                   },
                 ),
               ),

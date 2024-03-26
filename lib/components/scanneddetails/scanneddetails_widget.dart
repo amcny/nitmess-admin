@@ -40,7 +40,7 @@ class _ScanneddetailsWidgetState extends State<ScanneddetailsWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(-1.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Padding(
         padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
         child: StreamBuilder<List<ScannedOutputsRecord>>(

@@ -120,6 +120,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => MenudetailsWidget(
             messDocRef: params.getParam(
                 'messDocRef', ParamType.DocumentReference, false, ['mess']),
+            messname: params.getParam('messname', ParamType.String),
           ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),

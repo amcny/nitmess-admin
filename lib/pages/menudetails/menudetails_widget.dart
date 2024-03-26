@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/components/verifycode/verifycode_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -12,9 +13,11 @@ class MenudetailsWidget extends StatefulWidget {
   const MenudetailsWidget({
     super.key,
     required this.messDocRef,
+    required this.messname,
   });
 
   final DocumentReference? messDocRef;
+  final String? messname;
 
   @override
   State<MenudetailsWidget> createState() => _MenudetailsWidgetState();
@@ -102,11 +105,11 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                 },
               ),
               title: Text(
-                menudetailsMessRecord.day,
+                '',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Poppins',
                       color: FlutterFlowTheme.of(context).primaryText,
-                      fontSize: 22.0,
+                      fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                     ),
               ),
@@ -249,47 +252,75 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                   ),
                                 ),
                               ),
-                              FFButtonWidget(
-                                onPressed: () async {
-                                  await widget.messDocRef!
-                                      .update(createMessRecordData(
-                                    breakfast: _model.textController1.text,
-                                  ));
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: const Text(
-                                        'Updated !!',
-                                        style: TextStyle(
-                                          color: Colors.white,
+                              Builder(
+                                builder: (context) => FFButtonWidget(
+                                  onPressed: () async {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (dialogContext) {
+                                        return Dialog(
+                                          elevation: 0,
+                                          insetPadding: EdgeInsets.zero,
+                                          backgroundColor: Colors.transparent,
+                                          alignment: const AlignmentDirectional(
+                                                  0.0, 0.0)
+                                              .resolve(
+                                                  Directionality.of(context)),
+                                          child: GestureDetector(
+                                            onTap: () => _model
+                                                    .unfocusNode.canRequestFocus
+                                                ? FocusScope.of(context)
+                                                    .requestFocus(
+                                                        _model.unfocusNode)
+                                                : FocusScope.of(context)
+                                                    .unfocus(),
+                                            child: const VerifycodeWidget(),
+                                          ),
+                                        );
+                                      },
+                                    ).then((value) => setState(() {}));
+
+                                    await widget.messDocRef!
+                                        .update(createMessRecordData(
+                                      breakfast: _model.textController1.text,
+                                    ));
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: const Text(
+                                          'Updated !!',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                          ),
                                         ),
+                                        duration: const Duration(milliseconds: 1000),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
                                       ),
-                                      duration: const Duration(milliseconds: 1000),
-                                      backgroundColor:
-                                          FlutterFlowTheme.of(context).primary,
+                                    );
+                                  },
+                                  text: 'Update',
+                                  options: FFButtonOptions(
+                                    height: 40.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
                                     ),
-                                  );
-                                },
-                                text: 'Update',
-                                options: FFButtonOptions(
-                                  height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.normal,
-                                      ),
-                                  elevation: 3.0,
-                                  borderSide: const BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ),
                             ],
@@ -372,6 +403,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
+                                            lineHeight: 2.5,
                                           ),
                                       maxLines: null,
                                       validator: _model.textController2Validator
@@ -503,6 +535,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
+                                            lineHeight: 2.5,
                                           ),
                                       maxLines: null,
                                       validator: _model.textController3Validator
@@ -634,6 +667,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
+                                            lineHeight: 2.5,
                                           ),
                                       maxLines: null,
                                       validator: _model.textController4Validator

@@ -5,6 +5,7 @@ import 'package:collection/collection.dart';
 import '/backend/schema/util/firestore_util.dart';
 
 import 'index.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
 class AdminRecord extends FirestoreRecord {
   AdminRecord._(
@@ -44,6 +45,11 @@ class AdminRecord extends FirestoreRecord {
   String get phoneNumber => _phoneNumber ?? '';
   bool hasPhoneNumber() => _phoneNumber != null;
 
+  // "passcode" field.
+  int? _passcode;
+  int get passcode => _passcode ?? 0;
+  bool hasPasscode() => _passcode != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -51,6 +57,7 @@ class AdminRecord extends FirestoreRecord {
     _uid = snapshotData['uid'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
+    _passcode = castToType<int>(snapshotData['passcode']);
   }
 
   static CollectionReference get collection =>
@@ -93,6 +100,7 @@ Map<String, dynamic> createAdminRecordData({
   String? uid,
   DateTime? createdTime,
   String? phoneNumber,
+  int? passcode,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -102,6 +110,7 @@ Map<String, dynamic> createAdminRecordData({
       'uid': uid,
       'created_time': createdTime,
       'phone_number': phoneNumber,
+      'passcode': passcode,
     }.withoutNulls,
   );
 
@@ -118,7 +127,8 @@ class AdminRecordDocumentEquality implements Equality<AdminRecord> {
         e1?.photoUrl == e2?.photoUrl &&
         e1?.uid == e2?.uid &&
         e1?.createdTime == e2?.createdTime &&
-        e1?.phoneNumber == e2?.phoneNumber;
+        e1?.phoneNumber == e2?.phoneNumber &&
+        e1?.passcode == e2?.passcode;
   }
 
   @override
@@ -128,7 +138,8 @@ class AdminRecordDocumentEquality implements Equality<AdminRecord> {
         e?.photoUrl,
         e?.uid,
         e?.createdTime,
-        e?.phoneNumber
+        e?.phoneNumber,
+        e?.passcode
       ]);
 
   @override
