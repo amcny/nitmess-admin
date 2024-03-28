@@ -87,9 +87,9 @@ class _MenuindexWidgetState extends State<MenuindexWidget>
             : FocusScope.of(context).unfocus(),
         child: Scaffold(
           key: scaffoldKey,
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           appBar: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             automaticallyImplyLeading: false,
             title: Text(
               'Mess Menu',
@@ -199,6 +199,12 @@ class _MenuindexWidgetState extends State<MenuindexWidget>
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      blurRadius: 1.0,
+                                      color: Color(0x33000000),
+                                    )
+                                  ],
                                   borderRadius: BorderRadius.circular(12.0),
                                   shape: BoxShape.rectangle,
                                 ),
