@@ -105,7 +105,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                 },
               ),
               title: Text(
-                '',
+                '${widget.messname}: ${menudetailsMessRecord.day}',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Poppins',
                       color: FlutterFlowTheme.of(context).primaryText,

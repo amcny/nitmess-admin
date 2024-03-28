@@ -100,7 +100,8 @@ class _CoderesetWidgetState extends State<CoderesetWidget> {
                     errorTextSpace: 16.0,
                     showCursor: true,
                     cursorColor: FlutterFlowTheme.of(context).primary,
-                    obscureText: false,
+                    obscureText: true,
+                    obscuringCharacter: '●',
                     hintCharacter: '*',
                     keyboardType: TextInputType.number,
                     pinTheme: PinTheme(
