@@ -64,7 +64,9 @@ class _MenuindexWidgetState extends State<MenuindexWidget>
           );
         },
       ).then((value) => safeSetState(() {}));
-    });
+
+      return;
+        });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }

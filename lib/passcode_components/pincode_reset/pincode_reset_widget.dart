@@ -3,23 +3,23 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/passcode_components/pincode_reset/pincode_reset_widget.dart';
+import '/passcode_components/pincode_un_set/pincode_un_set_widget.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'pincode_set_model.dart';
-export 'pincode_set_model.dart';
+import 'pincode_reset_model.dart';
+export 'pincode_reset_model.dart';
 
-class PincodeSetWidget extends StatefulWidget {
-  const PincodeSetWidget({super.key});
+class PincodeResetWidget extends StatefulWidget {
+  const PincodeResetWidget({super.key});
 
   @override
-  State<PincodeSetWidget> createState() => _PincodeSetWidgetState();
+  State<PincodeResetWidget> createState() => _PincodeResetWidgetState();
 }
 
-class _PincodeSetWidgetState extends State<PincodeSetWidget>
+class _PincodeResetWidgetState extends State<PincodeResetWidget>
     with TickerProviderStateMixin {
-  late PincodeSetModel _model;
+  late PincodeResetModel _model;
 
   final animationsMap = {
     'containerOnPageLoadAnimation': AnimationInfo(
@@ -53,7 +53,7 @@ class _PincodeSetWidgetState extends State<PincodeSetWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => PincodeSetModel());
+    _model = createModel(context, () => PincodeResetModel());
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -108,19 +108,22 @@ class _PincodeSetWidgetState extends State<PincodeSetWidget>
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
-                      child: Text(
-                        'Enter your PIN below',
-                        style: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .override(
-                              fontFamily: 'Outfit',
-                              color: const Color(0xFF15161E),
-                              fontSize: 24.0,
-                              fontWeight: FontWeight.w500,
-                            ),
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, -1.0),
+                      child: Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            24.0, 16.0, 0.0, 0.0),
+                        child: Text(
+                          'Enter your Old PIN to reset',
+                          style: FlutterFlowTheme.of(context)
+                              .headlineMedium
+                              .override(
+                                fontFamily: 'Outfit',
+                                color: const Color(0xFF15161E),
+                                fontSize: 24.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                        ),
                       ),
                     ),
                     Padding(
@@ -147,7 +150,7 @@ class _PincodeSetWidgetState extends State<PincodeSetWidget>
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               enableActiveFill: false,
                               autoFocus: true,
-                              enablePinAutofill: false,
+                              enablePinAutofill: true,
                               errorTextSpace: 16.0,
                               showCursor: false,
                               cursorColor: const Color(0xFF6F61EF),
@@ -186,49 +189,8 @@ class _PincodeSetWidgetState extends State<PincodeSetWidget>
                                 24.0, 24.0, 24.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.05),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      Navigator.pop(context);
-
-                                      context.pushNamed('homepage');
-                                    },
-                                    text: 'Cancel',
-                                    options: FFButtonOptions(
-                                      height: 44.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: Colors.white,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Plus Jakarta Sans',
-                                            color: const Color(0xFF15161E),
-                                            fontSize: 14.0,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                      elevation: 0.0,
-                                      borderSide: const BorderSide(
-                                        color: Color(0xFFE5E7EB),
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      hoverColor: const Color(0xFFE5E7EB),
-                                      hoverBorderSide: const BorderSide(
-                                        color: Color(0xFFE5E7EB),
-                                        width: 2.0,
-                                      ),
-                                      hoverTextColor: const Color(0xFF15161E),
-                                      hoverElevation: 3.0,
-                                    ),
-                                  ),
-                                ),
                                 Align(
                                   alignment: const AlignmentDirectional(0.0, 0.05),
                                   child: FFButtonWidget(
@@ -238,32 +200,47 @@ class _PincodeSetWidgetState extends State<PincodeSetWidget>
                                                   currentUserDocument?.passcode,
                                                   0)
                                               .toString()) {
-                                        Navigator.pop(context);
+                                        await showModalBottomSheet(
+                                          isScrollControlled: true,
+                                          backgroundColor: Colors.transparent,
+                                          enableDrag: false,
+                                          context: context,
+                                          builder: (context) {
+                                            return Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: const PincodeUnSetWidget(),
+                                            );
+                                          },
+                                        ).then((value) => safeSetState(() {}));
+
+                                        return;
                                       } else {
                                         ScaffoldMessenger.of(context)
+                                            .clearSnackBars();
+                                        ScaffoldMessenger.of(context)
                                             .showSnackBar(
-                                          SnackBar(
+                                          const SnackBar(
                                             content: Text(
                                               'Entered PIN was incorrect !!',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .override(
-                                                        fontFamily: 'Open Sans',
-                                                        color: Colors.white,
-                                                        fontSize: 16.0,
-                                                      ),
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 16.0,
+                                              ),
                                             ),
                                             duration:
-                                                const Duration(milliseconds: 2000),
-                                            backgroundColor: const Color(0xFF404020),
+                                                Duration(milliseconds: 1000),
+                                            backgroundColor: Color(0xFF404020),
                                           ),
                                         );
+                                        return;
                                       }
                                     },
-                                    text: 'Verify Code',
+                                    text: 'Continue',
                                     options: FFButtonOptions(
-                                      height: 44.0,
+                                      width: 150.0,
+                                      height: 50.0,
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
@@ -276,7 +253,7 @@ class _PincodeSetWidgetState extends State<PincodeSetWidget>
                                           .override(
                                             fontFamily: 'Plus Jakarta Sans',
                                             color: Colors.white,
-                                            fontSize: 16.0,
+                                            fontSize: 18.0,
                                             fontWeight: FontWeight.w500,
                                           ),
                                       elevation: 3.0,
@@ -286,49 +263,6 @@ class _PincodeSetWidgetState extends State<PincodeSetWidget>
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                24.0, 24.0, 24.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    await showModalBottomSheet(
-                                      isScrollControlled: true,
-                                      backgroundColor: Colors.transparent,
-                                      enableDrag: false,
-                                      context: context,
-                                      builder: (context) {
-                                        return Padding(
-                                          padding:
-                                              MediaQuery.viewInsetsOf(context),
-                                          child: const PincodeResetWidget(),
-                                        );
-                                      },
-                                    ).then((value) => safeSetState(() {}));
-                                  },
-                                  child: Text(
-                                    'Reset PIN',
-                                    textAlign: TextAlign.start,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Open Sans',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          fontSize: 14.0,
-                                        ),
                                   ),
                                 ),
                               ],

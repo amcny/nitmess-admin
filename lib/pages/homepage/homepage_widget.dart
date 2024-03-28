@@ -53,136 +53,123 @@ class _HomepageWidgetState extends State<HomepageWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Image.asset(
-                          'assets/images/LOGODARK.png',
-                          width: 135.0,
-                          fit: BoxFit.cover,
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset(
+                      'assets/images/LOGODARK.png',
+                      width: 135.0,
+                      fit: BoxFit.cover,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: FlutterFlowTheme.of(context).primary,
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context).primary,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(2.0),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.fade,
-                                    child: FlutterFlowExpandedImageView(
-                                      image: Image.asset(
-                                        'assets/images/MESS_ICON.png',
-                                        fit: BoxFit.contain,
-                                      ),
-                                      allowRotation: false,
-                                      tag: 'imageTag2',
-                                      useHeroAnimation: true,
-                                    ),
-                                  ),
-                                );
-                              },
-                              child: Hero(
-                                tag: 'imageTag2',
-                                transitionOnUserGestures: true,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(40.0),
-                                  child: Image.asset(
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.fade,
+                                child: FlutterFlowExpandedImageView(
+                                  image: Image.asset(
                                     'assets/images/MESS_ICON.png',
-                                    width: 48.0,
-                                    height: 48.0,
-                                    fit: BoxFit.cover,
+                                    fit: BoxFit.contain,
                                   ),
+                                  allowRotation: false,
+                                  tag: 'imageTag2',
+                                  useHeroAnimation: true,
                                 ),
+                              ),
+                            );
+                          },
+                          child: Hero(
+                            tag: 'imageTag2',
+                            transitionOnUserGestures: true,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(40.0),
+                              child: Image.asset(
+                                'assets/images/MESS_ICON.png',
+                                width: 48.0,
+                                height: 48.0,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
                         ),
-                      ],
+                      ),
                     ),
+                  ],
+                ),
+              ),
+              Align(
+                alignment: const AlignmentDirectional(-1.0, 0.0),
+                child: Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 15.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Account:',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Poppins',
+                              fontSize: 16.0,
+                            ),
+                      ),
+                      Text(
+                        currentUserEmail,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Poppins',
+                              fontSize: 16.0,
+                            ),
+                      ),
+                    ].divide(const SizedBox(width: 5.0)),
                   ),
-                  Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 15.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'User:',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  fontSize: 16.0,
-                                ),
-                          ),
-                          AuthUserStreamWidget(
-                            builder: (context) => Text(
-                              currentUserDisplayName,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
+                ),
+              ),
+              Align(
+                alignment: const AlignmentDirectional(-1.0, 0.0),
+                child: Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 15.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'User:',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Poppins',
+                              fontSize: 16.0,
+                            ),
+                      ),
+                      AuthUserStreamWidget(
+                        builder: (context) => Text(
+                          currentUserDisplayName,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     fontSize: 16.0,
                                   ),
-                            ),
-                          ),
-                        ].divide(const SizedBox(width: 5.0)),
+                        ),
                       ),
-                    ),
+                    ].divide(const SizedBox(width: 5.0)),
                   ),
-                  Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 15.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Account:',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  fontSize: 16.0,
-                                ),
-                          ),
-                          Text(
-                            currentUserEmail,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  fontSize: 16.0,
-                                ),
-                          ),
-                        ].divide(const SizedBox(width: 5.0)),
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 15.0, 5.0),
@@ -212,22 +199,19 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                 endIndent: 10.0,
                 color: Color(0xFFE0E0E0),
               ),
-              Expanded(
+              Flexible(
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(15.0, 20.0, 15.0, 0.0),
                   child: GridView(
-                    padding: const EdgeInsets.fromLTRB(
-                      0,
-                      20.0,
-                      0,
-                      0,
-                    ),
+                    padding: EdgeInsets.zero,
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 20.0,
                       mainAxisSpacing: 20.0,
                       childAspectRatio: 1.0,
                     ),
+                    shrinkWrap: true,
                     scrollDirection: Axis.vertical,
                     children: [
                       Align(
@@ -330,6 +314,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
+                                    fontSize: 24.0,
                                   ),
                               elevation: 3.0,
                               borderSide: const BorderSide(

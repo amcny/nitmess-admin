@@ -128,18 +128,14 @@ class _NavBarPageState extends State<NavBarPage> {
         backgroundColor: Colors.white,
         selectedItemColor: FlutterFlowTheme.of(context).primary,
         unselectedItemColor: const Color(0x8A000000),
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.home,
               size: 24.0,
-            ),
-            activeIcon: FaIcon(
-              FontAwesomeIcons.home,
-              size: 27.0,
             ),
             label: 'Home',
             tooltip: '',
@@ -149,11 +145,7 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.menu_book_rounded,
               size: 24.0,
             ),
-            activeIcon: Icon(
-              Icons.menu_book_rounded,
-              size: 27.0,
-            ),
-            label: 'Home',
+            label: 'Mess Menu',
             tooltip: '',
           )
         ],
