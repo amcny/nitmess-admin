@@ -1,5 +1,4 @@
 import '/backend/backend.dart';
-import '/components/codeverify/codeverify_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -260,76 +259,48 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                   ),
                                 ),
                               ),
-                              Builder(
-                                builder: (context) => FFButtonWidget(
-                                  onPressed: () async {
-                                    await showDialog(
-                                      context: context,
-                                      builder: (dialogContext) {
-                                        return Dialog(
-                                          elevation: 0,
-                                          insetPadding: EdgeInsets.zero,
-                                          backgroundColor: Colors.transparent,
-                                          alignment: const AlignmentDirectional(
-                                                  0.0, 0.0)
-                                              .resolve(
-                                                  Directionality.of(context)),
-                                          child: GestureDetector(
-                                            onTap: () => _model
-                                                    .unfocusNode.canRequestFocus
-                                                ? FocusScope.of(context)
-                                                    .requestFocus(
-                                                        _model.unfocusNode)
-                                                : FocusScope.of(context)
-                                                    .unfocus(),
-                                            child: const CodeverifyWidget(),
-                                          ),
-                                        );
-                                      },
-                                    ).then((value) => setState(() {}));
-
-                                    await widget.messDocRef!
-                                        .update(createMessRecordData(
-                                      breakfast: _model.textController1.text,
-                                    ));
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: const Text(
-                                          'Updated !!',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                        duration: const Duration(milliseconds: 1000),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                      ),
-                                    );
-                                  },
-                                  text: 'Update',
-                                  options: FFButtonOptions(
-                                    height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Poppins',
+                              FFButtonWidget(
+                                onPressed: () async {
+                                  await widget.messDocRef!
+                                      .update(createMessRecordData(
+                                    breakfast: _model.textController1.text,
+                                  ));
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: const Text(
+                                        'Updated !!',
+                                        style: TextStyle(
                                           color: Colors.white,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.normal,
                                         ),
-                                    elevation: 3.0,
-                                    borderSide: const BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
+                                      ),
+                                      duration: const Duration(milliseconds: 2000),
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context).primary,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                  );
+                                },
+                                text: 'Update',
+                                options: FFButtonOptions(
+                                  height: 40.0,
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      24.0, 0.0, 24.0, 0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                  elevation: 3.0,
+                                  borderSide: const BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
                                   ),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ),
                             ],
@@ -440,7 +411,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           color: Colors.white,
                                         ),
                                       ),
-                                      duration: const Duration(milliseconds: 300),
+                                      duration: const Duration(milliseconds: 2000),
                                       backgroundColor:
                                           FlutterFlowTheme.of(context).primary,
                                     ),
@@ -578,7 +549,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           color: Colors.white,
                                         ),
                                       ),
-                                      duration: const Duration(milliseconds: 300),
+                                      duration: const Duration(milliseconds: 2000),
                                       backgroundColor:
                                           FlutterFlowTheme.of(context).primary,
                                     ),
@@ -716,7 +687,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           color: Colors.white,
                                         ),
                                       ),
-                                      duration: const Duration(milliseconds: 300),
+                                      duration: const Duration(milliseconds: 2000),
                                       backgroundColor:
                                           FlutterFlowTheme.of(context).primary,
                                     ),
