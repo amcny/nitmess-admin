@@ -83,58 +83,50 @@ class _CodeverifyWidgetState extends State<CodeverifyWidget> {
                   thickness: 2.0,
                   color: FlutterFlowTheme.of(context).primaryBackground,
                 ),
-                Form(
-                  key: _model.formKey,
-                  autovalidateMode: AutovalidateMode.disabled,
-                  child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                    child: PinCodeTextField(
-                      autoDisposeControllers: false,
-                      appContext: context,
-                      length: 6,
-                      textStyle:
-                          FlutterFlowTheme.of(context).bodyLarge.override(
-                                fontFamily: 'Poppins',
-                                letterSpacing: 0.0,
-                              ),
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      enableActiveFill: false,
-                      autoFocus: true,
-                      enablePinAutofill: false,
-                      errorTextSpace: 16.0,
-                      showCursor: true,
-                      cursorColor: FlutterFlowTheme.of(context).primary,
-                      obscureText: true,
-                      obscuringCharacter: '●',
-                      hintCharacter: '*',
-                      keyboardType: TextInputType.number,
-                      pinTheme: PinTheme(
-                        fieldHeight: 44.0,
-                        fieldWidth: 44.0,
-                        borderWidth: 2.0,
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(12.0),
-                          bottomRight: Radius.circular(12.0),
-                          topLeft: Radius.circular(12.0),
-                          topRight: Radius.circular(12.0),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  child: PinCodeTextField(
+                    autoDisposeControllers: false,
+                    appContext: context,
+                    length: 6,
+                    textStyle: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Poppins',
+                          letterSpacing: 0.0,
                         ),
-                        shape: PinCodeFieldShape.box,
-                        activeColor: FlutterFlowTheme.of(context).primaryText,
-                        inactiveColor: FlutterFlowTheme.of(context).alternate,
-                        selectedColor: FlutterFlowTheme.of(context).primary,
-                        activeFillColor:
-                            FlutterFlowTheme.of(context).primaryText,
-                        inactiveFillColor:
-                            FlutterFlowTheme.of(context).alternate,
-                        selectedFillColor: FlutterFlowTheme.of(context).primary,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    enableActiveFill: false,
+                    autoFocus: true,
+                    enablePinAutofill: false,
+                    errorTextSpace: 16.0,
+                    showCursor: true,
+                    cursorColor: FlutterFlowTheme.of(context).primary,
+                    obscureText: true,
+                    obscuringCharacter: '●',
+                    hintCharacter: '*',
+                    keyboardType: TextInputType.number,
+                    pinTheme: PinTheme(
+                      fieldHeight: 44.0,
+                      fieldWidth: 44.0,
+                      borderWidth: 2.0,
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(12.0),
+                        bottomRight: Radius.circular(12.0),
+                        topLeft: Radius.circular(12.0),
+                        topRight: Radius.circular(12.0),
                       ),
-                      controller: _model.pinCodeController,
-                      onChanged: (_) {},
-                      autovalidateMode: AutovalidateMode.disabled,
-                      validator: _model.pinCodeControllerValidator
-                          .asValidator(context),
+                      shape: PinCodeFieldShape.box,
+                      activeColor: FlutterFlowTheme.of(context).primaryText,
+                      inactiveColor: FlutterFlowTheme.of(context).alternate,
+                      selectedColor: FlutterFlowTheme.of(context).primary,
+                      activeFillColor: FlutterFlowTheme.of(context).primaryText,
+                      inactiveFillColor: FlutterFlowTheme.of(context).alternate,
+                      selectedFillColor: FlutterFlowTheme.of(context).primary,
                     ),
+                    controller: _model.pinCodeController,
+                    onChanged: (_) {},
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    validator:
+                        _model.pinCodeControllerValidator.asValidator(context),
                   ),
                 ),
                 Flexible(
@@ -222,10 +214,23 @@ class _CodeverifyWidgetState extends State<CodeverifyWidget> {
                               Navigator.pop(context);
                               return;
                             } else {
-                              if (_model.formKey.currentState == null ||
-                                  !_model.formKey.currentState!.validate()) {
-                                return;
-                              }
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: const Text('Verification Code'),
+                                    content: const Text(
+                                        'Entered code is invalid. Please try again.'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: const Text('Try again'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
                               return;
                             }
                           },
