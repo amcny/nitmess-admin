@@ -66,7 +66,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -86,9 +86,9 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
               : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             appBar: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+              backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
               automaticallyImplyLeading: false,
               leading: FlutterFlowIconButton(
                 borderColor: Colors.transparent,
