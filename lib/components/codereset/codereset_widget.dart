@@ -1,21 +1,22 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
-import 'verifycode_model.dart';
-export 'verifycode_model.dart';
+import 'codereset_model.dart';
+export 'codereset_model.dart';
 
-class VerifycodeWidget extends StatefulWidget {
-  const VerifycodeWidget({super.key});
+class CoderesetWidget extends StatefulWidget {
+  const CoderesetWidget({super.key});
 
   @override
-  State<VerifycodeWidget> createState() => _VerifycodeWidgetState();
+  State<CoderesetWidget> createState() => _CoderesetWidgetState();
 }
 
-class _VerifycodeWidgetState extends State<VerifycodeWidget> {
-  late VerifycodeModel _model;
+class _CoderesetWidgetState extends State<CoderesetWidget> {
+  late CoderesetModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -26,7 +27,7 @@ class _VerifycodeWidgetState extends State<VerifycodeWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => VerifycodeModel());
+    _model = createModel(context, () => CoderesetModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -65,7 +66,7 @@ class _VerifycodeWidgetState extends State<VerifycodeWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Verification Code',
+                  'Verification Code - Reset',
                   style: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Poppins',
                         color: FlutterFlowTheme.of(context).primary,
@@ -124,9 +125,9 @@ class _VerifycodeWidgetState extends State<VerifycodeWidget> {
                 ),
                 Flexible(
                   child: Align(
-                    alignment: const AlignmentDirectional(1.0, -0.7),
+                    alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Text(
-                      'Forgot Pin ?',
+                      'Please remember your passcode',
                       style: FlutterFlowTheme.of(context).titleSmall.override(
                             fontFamily: 'Poppins',
                             color: FlutterFlowTheme.of(context).primaryText,
@@ -172,27 +173,26 @@ class _VerifycodeWidgetState extends State<VerifycodeWidget> {
                         ),
                         FFButtonWidget(
                           onPressed: () async {
-                            if (_model.pinCodeController!.text ==
-                                valueOrDefault(currentUserDocument?.passcode, 0)
-                                    .toString()) {
-                              Navigator.pop(context);
-                              return;
-                            } else {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: const Text(
-                                    'Pin was Incorrect. Please try again',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
+                            await currentUserReference!
+                                .update(createAdminRecordData(
+                              passcode:
+                                  int.tryParse(_model.pinCodeController!.text),
+                            ));
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: const Text(
+                                  'Reset Passcode Done',
+                                  style: TextStyle(
+                                    color: Colors.white,
                                   ),
-                                  duration: const Duration(milliseconds: 1000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).primary,
                                 ),
-                              );
-                              return;
-                            }
+                                duration: const Duration(milliseconds: 2000),
+                                backgroundColor:
+                                    FlutterFlowTheme.of(context).primary,
+                              ),
+                            );
+
+                            context.goNamed('menuindex');
                           },
                           text: 'Confirm',
                           options: FFButtonOptions(

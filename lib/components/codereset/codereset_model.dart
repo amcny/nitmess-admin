@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'verifycode_widget.dart' show VerifycodeWidget;
+import 'codereset_widget.dart' show CoderesetWidget;
 import 'package:flutter/material.dart';
 
-class VerifycodeModel extends FlutterFlowModel<VerifycodeWidget> {
+class CoderesetModel extends FlutterFlowModel<CoderesetWidget> {
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for PinCode widget.

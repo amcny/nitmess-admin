@@ -1,5 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -205,31 +203,8 @@ class _PincodeUnSetWidgetState extends State<PincodeUnSetWidget>
                                 Align(
                                   alignment: const AlignmentDirectional(0.0, 0.05),
                                   child: FFButtonWidget(
-                                    onPressed: () async {
-                                      await currentUserReference!
-                                          .update(createAdminRecordData(
-                                        passcode: int.tryParse(
-                                            _model.pinCodeController!.text),
-                                      ));
-                                      ScaffoldMessenger.of(context)
-                                          .clearSnackBars();
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        const SnackBar(
-                                          content: Text(
-                                            'PIN set Successfully !!!',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                          duration:
-                                              Duration(milliseconds: 2000),
-                                          backgroundColor: Color(0xFF404020),
-                                        ),
-                                      );
-
-                                      context.goNamed('menuindex');
+                                    onPressed: () {
+                                      print('Button pressed ...');
                                     },
                                     text: 'Continue',
                                     options: FFButtonOptions(

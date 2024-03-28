@@ -1,5 +1,5 @@
 import '/backend/backend.dart';
-import '/components/verifycode/verifycode_widget.dart';
+import '/components/codeverify/codeverify_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -274,7 +274,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                                         _model.unfocusNode)
                                                 : FocusScope.of(context)
                                                     .unfocus(),
-                                            child: const VerifycodeWidget(),
+                                            child: const CodeverifyWidget(),
                                           ),
                                         );
                                       },
