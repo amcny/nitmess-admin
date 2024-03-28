@@ -218,9 +218,9 @@ class _CodeverifyWidgetState extends State<CodeverifyWidget> {
                                 context: context,
                                 builder: (alertDialogContext) {
                                   return AlertDialog(
-                                    title: const Text('Verification Code'),
+                                    title: const Text('Invalid Code'),
                                     content: const Text(
-                                        'Entered code is invalid. Please try again.'),
+                                        'Please enter correct verificate code to proceed'),
                                     actions: [
                                       TextButton(
                                         onPressed: () =>
