@@ -147,7 +147,7 @@ class _CoderesetWidgetState extends State<CoderesetWidget> {
                       children: [
                         FFButtonWidget(
                           onPressed: () async {
-                            Navigator.pop(context);
+                            context.goNamed('homepage');
                           },
                           text: 'Dismiss',
                           options: FFButtonOptions(

@@ -148,7 +148,7 @@ class _FbStatusWidgetState extends State<FbStatusWidget> {
               children: [
                 Form(
                   key: _model.formKey2,
-                  autovalidateMode: AutovalidateMode.disabled,
+                  autovalidateMode: AutovalidateMode.always,
                   child: FlutterFlowRadioButton(
                     options: ['In Progress', 'Resolved'].toList(),
                     onChanged: (val) => setState(() {}),
