@@ -65,6 +65,7 @@ class _FbStatusWidgetState extends State<FbStatusWidget> {
               style: FlutterFlowTheme.of(context).bodyLarge.override(
                     fontFamily: 'Open Sans',
                     color: FlutterFlowTheme.of(context).primary,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
                   ),
             ),
@@ -78,11 +79,13 @@ class _FbStatusWidgetState extends State<FbStatusWidget> {
             child: TextFormField(
               controller: _model.textController,
               focusNode: _model.textFieldFocusNode,
+              autofocus: false,
               obscureText: false,
               decoration: InputDecoration(
                 labelText: 'Enter your feedback',
                 labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Poppins',
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
@@ -115,8 +118,10 @@ class _FbStatusWidgetState extends State<FbStatusWidget> {
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
+                    letterSpacing: 0.0,
                   ),
               maxLines: null,
+              minLines: null,
               maxLength: 100,
               maxLengthEnforcement: MaxLengthEnforcement.enforced,
               keyboardType: TextInputType.multiline,
@@ -133,6 +138,7 @@ class _FbStatusWidgetState extends State<FbStatusWidget> {
               style: FlutterFlowTheme.of(context).bodyLarge.override(
                     fontFamily: 'Open Sans',
                     color: FlutterFlowTheme.of(context).primary,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
                   ),
             ),
@@ -155,7 +161,11 @@ class _FbStatusWidgetState extends State<FbStatusWidget> {
                     controller: _model.radioButtonValueController ??=
                         FormFieldController<String>(widget.fbdoc!.fbDoc.radio),
                     optionHeight: 32.0,
-                    textStyle: FlutterFlowTheme.of(context).labelMedium,
+                    textStyle:
+                        FlutterFlowTheme.of(context).labelMedium.override(
+                              fontFamily: 'Open Sans',
+                              letterSpacing: 0.0,
+                            ),
                     textPadding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                     buttonPosition: RadioButtonPosition.left,
@@ -187,6 +197,7 @@ class _FbStatusWidgetState extends State<FbStatusWidget> {
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Poppins',
                                       color: Colors.white,
+                                      letterSpacing: 0.0,
                                     ),
                           ),
                           duration: const Duration(milliseconds: 2000),
@@ -217,6 +228,7 @@ class _FbStatusWidgetState extends State<FbStatusWidget> {
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
                           color: Colors.white,
+                          letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
                     borderSide: const BorderSide(

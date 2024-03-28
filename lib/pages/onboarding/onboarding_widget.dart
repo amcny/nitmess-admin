@@ -103,6 +103,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                       style: FlutterFlowTheme.of(context).displaySmall.override(
                             fontFamily: 'Montserrat',
                             color: FlutterFlowTheme.of(context).primary,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
                           ),
                     ),
@@ -128,6 +129,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                         fontFamily: 'Poppins',
                         color: Colors.white,
                         fontSize: 16.0,
+                        letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
                       ),
                   elevation: 2.0,
@@ -151,6 +153,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                           fontFamily: 'Montserrat',
                           color: FlutterFlowTheme.of(context).primaryText,
                           fontSize: 13.0,
+                          letterSpacing: 0.0,
                           fontWeight: FontWeight.w300,
                         ),
                   ),

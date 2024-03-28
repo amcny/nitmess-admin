@@ -128,6 +128,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 16.0,
+                              letterSpacing: 0.0,
                             ),
                       ),
                       Text(
@@ -135,6 +136,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 16.0,
+                              letterSpacing: 0.0,
                             ),
                       ),
                     ].divide(const SizedBox(width: 5.0)),
@@ -155,6 +157,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 16.0,
+                              letterSpacing: 0.0,
                             ),
                       ),
                       AuthUserStreamWidget(
@@ -164,6 +167,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
                                     fontSize: 16.0,
+                                    letterSpacing: 0.0,
                                   ),
                         ),
                       ),
@@ -188,6 +192,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                       style: FlutterFlowTheme.of(context).titleLarge.override(
                             fontFamily: 'Poppins',
                             color: Colors.white,
+                            letterSpacing: 0.0,
                           ),
                     ),
                   ),
@@ -262,6 +267,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                           .override(
                                             fontFamily: 'Poppins',
                                             color: Colors.white,
+                                            letterSpacing: 0.0,
                                           ),
                                     ),
                                     duration: const Duration(milliseconds: 2000),
@@ -315,6 +321,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 24.0,
+                                    letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
                               borderSide: const BorderSide(
@@ -348,6 +355,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.white,
+                                  letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
                             borderSide: const BorderSide(
@@ -378,6 +386,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.white,
+                                  letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
                             borderSide: const BorderSide(
@@ -413,6 +422,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.white,
+                                  letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
                             borderSide: const BorderSide(

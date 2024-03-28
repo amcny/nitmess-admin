@@ -54,7 +54,10 @@ class _CodeverifyWidgetState extends State<CodeverifyWidget> {
               BoxShadow(
                 blurRadius: 7.0,
                 color: Color(0x2F1D2429),
-                offset: Offset(0.0, 3.0),
+                offset: Offset(
+                  0.0,
+                  3.0,
+                ),
               )
             ],
             borderRadius: BorderRadius.circular(12.0),
@@ -71,6 +74,7 @@ class _CodeverifyWidgetState extends State<CodeverifyWidget> {
                         fontFamily: 'Poppins',
                         color: FlutterFlowTheme.of(context).primary,
                         fontSize: 18.0,
+                        letterSpacing: 0.0,
                         fontWeight: FontWeight.normal,
                       ),
                 ),
@@ -92,6 +96,7 @@ class _CodeverifyWidgetState extends State<CodeverifyWidget> {
                       textStyle:
                           FlutterFlowTheme.of(context).bodyLarge.override(
                                 fontFamily: 'Poppins',
+                                letterSpacing: 0.0,
                               ),
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       enableActiveFill: false,
@@ -166,6 +171,7 @@ class _CodeverifyWidgetState extends State<CodeverifyWidget> {
                                 fontFamily: 'Poppins',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 16.0,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.normal,
                               ),
                         ),
@@ -198,6 +204,7 @@ class _CodeverifyWidgetState extends State<CodeverifyWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.white,
+                                  letterSpacing: 0.0,
                                 ),
                             elevation: 1.0,
                             borderSide: const BorderSide(
@@ -235,6 +242,7 @@ class _CodeverifyWidgetState extends State<CodeverifyWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   color: Colors.white,
+                                  letterSpacing: 0.0,
                                 ),
                             elevation: 1.0,
                             borderSide: const BorderSide(

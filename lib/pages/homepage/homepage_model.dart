@@ -10,8 +10,6 @@ class HomepageModel extends FlutterFlowModel<HomepageWidget> {
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   int? count;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -19,8 +17,4 @@ class HomepageModel extends FlutterFlowModel<HomepageWidget> {
   void dispose() {
     unfocusNode.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

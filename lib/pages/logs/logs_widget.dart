@@ -100,6 +100,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                       fontFamily: 'Poppins',
                       color: Colors.black,
                       fontSize: 22.0,
+                      letterSpacing: 0.0,
                     ),
               ),
               actions: const [],
@@ -127,6 +128,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   fontSize: 16.0,
+                                  letterSpacing: 0.0,
                                 ),
                           ),
                           AuthUserStreamWidget(
@@ -137,6 +139,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     fontSize: 16.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                           ),
@@ -160,6 +163,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   fontSize: 16.0,
+                                  letterSpacing: 0.0,
                                 ),
                           ),
                           Text(
@@ -169,6 +173,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                                 .override(
                                   fontFamily: 'Poppins',
                                   fontSize: 16.0,
+                                  letterSpacing: 0.0,
                                 ),
                           ),
                         ].divide(const SizedBox(width: 5.0)),
@@ -209,6 +214,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                 ),
@@ -224,6 +230,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                 ),
@@ -239,6 +246,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                 ),
@@ -254,6 +262,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                 ),
@@ -279,6 +288,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                                         fontFamily: 'Poppins',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
+                                        letterSpacing: 0.0,
                                       ),
                                 ),
                                 Text(
@@ -289,6 +299,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                                         fontFamily: 'Poppins',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
+                                        letterSpacing: 0.0,
                                       ),
                                 ),
                                 Text(
@@ -299,6 +310,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                                         fontFamily: 'Poppins',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
+                                        letterSpacing: 0.0,
                                       ),
                                 ),
                                 Text(
@@ -307,8 +319,12 @@ class _LogsWidgetState extends State<LogsWidget> {
                                         'd/M h:mm a', logDataItem.timeStamp),
                                     'time',
                                   ),
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Open Sans',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                               ].map((c) => DataCell(c)).toList(),
                             ),

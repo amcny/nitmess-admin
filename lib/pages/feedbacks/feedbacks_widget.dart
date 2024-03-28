@@ -88,6 +88,7 @@ class _FeedbacksWidgetState extends State<FeedbacksWidget> {
                     fontFamily: 'Poppins',
                     color: Colors.black,
                     fontSize: 22.0,
+                    letterSpacing: 0.0,
                   ),
             ),
           ),
@@ -152,6 +153,7 @@ class _FeedbacksWidgetState extends State<FeedbacksWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         fontSize: 16.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
                                 ),
@@ -164,6 +166,7 @@ class _FeedbacksWidgetState extends State<FeedbacksWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         fontSize: 16.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.normal,
                                       ),
                                 )
@@ -172,6 +175,7 @@ class _FeedbacksWidgetState extends State<FeedbacksWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                           ),
@@ -195,6 +199,7 @@ class _FeedbacksWidgetState extends State<FeedbacksWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         fontSize: 16.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
                                 ),
@@ -207,6 +212,7 @@ class _FeedbacksWidgetState extends State<FeedbacksWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         fontSize: 16.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.normal,
                                       ),
                                 )
@@ -215,6 +221,7 @@ class _FeedbacksWidgetState extends State<FeedbacksWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                           ),
@@ -235,6 +242,7 @@ class _FeedbacksWidgetState extends State<FeedbacksWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     fontSize: 18.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                             FoodRatingWidget(
@@ -260,6 +268,7 @@ class _FeedbacksWidgetState extends State<FeedbacksWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     fontSize: 18.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                             ServiceRatingWidget(
@@ -285,6 +294,7 @@ class _FeedbacksWidgetState extends State<FeedbacksWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     fontSize: 18.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                             HygieneRatingWidget(
@@ -313,6 +323,7 @@ class _FeedbacksWidgetState extends State<FeedbacksWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         fontSize: 16.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
                                 ),
@@ -322,6 +333,7 @@ class _FeedbacksWidgetState extends State<FeedbacksWidget> {
                                       .bodyLarge
                                       .override(
                                         fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
                                       ),
                                 )
                               ],
@@ -330,6 +342,7 @@ class _FeedbacksWidgetState extends State<FeedbacksWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     fontSize: 18.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                             textAlign: TextAlign.start,

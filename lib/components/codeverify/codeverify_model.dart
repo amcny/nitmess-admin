@@ -19,8 +19,6 @@ class CodeverifyModel extends FlutterFlowModel<CodeverifyWidget> {
     return null;
   }
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     pinCodeController = TextEditingController();
@@ -31,8 +29,4 @@ class CodeverifyModel extends FlutterFlowModel<CodeverifyWidget> {
   void dispose() {
     pinCodeController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

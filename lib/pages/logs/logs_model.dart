@@ -12,8 +12,6 @@ class LogsModel extends FlutterFlowModel<LogsWidget> {
   final paginatedDataTableController =
       FlutterFlowDataTableController<ScannedOutputsRecord>();
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -21,8 +19,4 @@ class LogsModel extends FlutterFlowModel<LogsWidget> {
   void dispose() {
     unfocusNode.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

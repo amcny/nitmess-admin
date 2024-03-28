@@ -23,8 +23,6 @@ class FbStatusModel extends FlutterFlowModel<FbStatusWidget> {
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     textControllerValidator = _textControllerValidator;
@@ -36,9 +34,6 @@ class FbStatusModel extends FlutterFlowModel<FbStatusWidget> {
     textController?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   String? get radioButtonValue => radioButtonValueController?.value;
 }

@@ -10,8 +10,6 @@ class MenuindexModel extends FlutterFlowModel<MenuindexWidget> {
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -20,9 +18,6 @@ class MenuindexModel extends FlutterFlowModel<MenuindexWidget> {
     unfocusNode.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   String? get radioButtonValue => radioButtonValueController?.value;
 }

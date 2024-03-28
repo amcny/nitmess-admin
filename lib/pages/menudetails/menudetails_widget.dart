@@ -110,6 +110,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                       fontFamily: 'Poppins',
                       color: FlutterFlowTheme.of(context).primaryText,
                       fontSize: 20.0,
+                      letterSpacing: 0.0,
                       fontWeight: FontWeight.bold,
                     ),
               ),
@@ -130,10 +131,12 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                       labelStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Poppins',
+                                letterSpacing: 0.0,
                               ),
                       unselectedLabelStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Poppins',
+                                letterSpacing: 0.0,
                               ),
                       indicatorColor: FlutterFlowTheme.of(context).primary,
                       padding: const EdgeInsets.all(4.0),
@@ -189,17 +192,20 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                         text: menudetailsMessRecord.breakfast,
                                       ),
                                       focusNode: _model.textFieldFocusNode1,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
                                             ),
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
@@ -243,9 +249,11 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
                                             lineHeight: 2.5,
                                           ),
                                       maxLines: null,
+                                      minLines: null,
                                       validator: _model.textController1Validator
                                           .asValidator(context),
                                     ),
@@ -312,6 +320,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                         .override(
                                           fontFamily: 'Poppins',
                                           color: Colors.white,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                         ),
                                     elevation: 3.0,
@@ -349,17 +358,20 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                         text: menudetailsMessRecord.lunch,
                                       ),
                                       focusNode: _model.textFieldFocusNode2,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
                                             ),
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
@@ -403,9 +415,11 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
                                             lineHeight: 2.5,
                                           ),
                                       maxLines: null,
+                                      minLines: null,
                                       validator: _model.textController2Validator
                                           .asValidator(context),
                                     ),
@@ -445,6 +459,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                       .override(
                                         fontFamily: 'Poppins',
                                         color: Colors.white,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.normal,
                                       ),
                                   elevation: 3.0,
@@ -481,17 +496,20 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                         text: menudetailsMessRecord.snacks,
                                       ),
                                       focusNode: _model.textFieldFocusNode3,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
                                             ),
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
@@ -535,9 +553,11 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
                                             lineHeight: 2.5,
                                           ),
                                       maxLines: null,
+                                      minLines: null,
                                       validator: _model.textController3Validator
                                           .asValidator(context),
                                     ),
@@ -577,6 +597,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                       .override(
                                         fontFamily: 'Poppins',
                                         color: Colors.white,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.normal,
                                       ),
                                   elevation: 3.0,
@@ -613,17 +634,20 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                         text: menudetailsMessRecord.dinner,
                                       ),
                                       focusNode: _model.textFieldFocusNode4,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
                                             ),
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
@@ -667,9 +691,11 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
                                             lineHeight: 2.5,
                                           ),
                                       maxLines: null,
+                                      minLines: null,
                                       validator: _model.textController4Validator
                                           .asValidator(context),
                                     ),
@@ -709,6 +735,7 @@ class _MenudetailsWidgetState extends State<MenudetailsWidget>
                                       .override(
                                         fontFamily: 'Poppins',
                                         color: Colors.white,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.normal,
                                       ),
                                   elevation: 3.0,

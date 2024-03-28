@@ -97,6 +97,7 @@ class _MenuindexWidgetState extends State<MenuindexWidget>
                     fontFamily: 'Poppins',
                     color: FlutterFlowTheme.of(context).primaryText,
                     fontSize: 22.0,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.bold,
                   ),
             ),
@@ -124,7 +125,11 @@ class _MenuindexWidgetState extends State<MenuindexWidget>
                       controller: _model.radioButtonValueController ??=
                           FormFieldController<String>('Kamadhenu Mess'),
                       optionHeight: 45.0,
-                      textStyle: FlutterFlowTheme.of(context).labelMedium,
+                      textStyle:
+                          FlutterFlowTheme.of(context).labelMedium.override(
+                                fontFamily: 'Open Sans',
+                                letterSpacing: 0.0,
+                              ),
                       textPadding: const EdgeInsets.all(10.0),
                       buttonPosition: RadioButtonPosition.left,
                       direction: Axis.horizontal,
@@ -224,6 +229,7 @@ class _MenuindexWidgetState extends State<MenuindexWidget>
                                               .bodyLarge
                                               .override(
                                                 fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
                                               ),
                                         ),
                                       ),

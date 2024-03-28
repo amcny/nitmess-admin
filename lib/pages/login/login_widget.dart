@@ -150,6 +150,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 .displaySmall
                                 .override(
                                   fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                 ),
                           ),
@@ -166,6 +167,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     fontSize: 12.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                           ),
@@ -178,6 +180,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             child: TextFormField(
                               controller: _model.emailAddressController,
                               focusNode: _model.emailAddressFocusNode,
+                              autofocus: false,
                               autofillHints: const [AutofillHints.email],
                               obscureText: false,
                               decoration: InputDecoration(
@@ -188,6 +191,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
+                                      letterSpacing: 0.0,
                                     ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: const BorderSide(
@@ -230,7 +234,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
                                   ),
+                              minLines: null,
                               keyboardType: TextInputType.emailAddress,
                               validator: _model.emailAddressControllerValidator
                                   .asValidator(context),
@@ -245,6 +251,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             child: TextFormField(
                               controller: _model.passwordController,
                               focusNode: _model.passwordFocusNode,
+                              autofocus: false,
                               obscureText: !_model.passwordVisibility,
                               decoration: InputDecoration(
                                 labelText: 'Password',
@@ -254,6 +261,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
+                                      letterSpacing: 0.0,
                                     ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: const BorderSide(
@@ -305,7 +313,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
                                   ),
+                              minLines: null,
                               validator: _model.passwordControllerValidator
                                   .asValidator(context),
                             ),
@@ -355,6 +365,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontSize: 14.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.normal,
                                       ),
                                 ),
@@ -395,6 +406,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
                                     fontSize: 15.0,
+                                    letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
                               borderSide: const BorderSide(
@@ -415,6 +427,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   fontFamily: 'Poppins',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
                                 ),
                           ),

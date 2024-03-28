@@ -9,8 +9,6 @@ class CoderesetModel extends FlutterFlowModel<CoderesetWidget> {
   TextEditingController? pinCodeController;
   String? Function(BuildContext, String?)? pinCodeControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     pinCodeController = TextEditingController();
@@ -20,8 +18,4 @@ class CoderesetModel extends FlutterFlowModel<CoderesetWidget> {
   void dispose() {
     pinCodeController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

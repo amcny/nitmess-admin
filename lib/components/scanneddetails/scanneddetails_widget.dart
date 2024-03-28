@@ -80,7 +80,10 @@ class _ScanneddetailsWidgetState extends State<ScanneddetailsWidget> {
                   BoxShadow(
                     blurRadius: 7.0,
                     color: Color(0x2F1D2429),
-                    offset: Offset(0.0, 3.0),
+                    offset: Offset(
+                      0.0,
+                      3.0,
+                    ),
                   )
                 ],
                 borderRadius: BorderRadius.circular(12.0),
@@ -97,6 +100,7 @@ class _ScanneddetailsWidgetState extends State<ScanneddetailsWidget> {
                             fontFamily: 'Poppins',
                             color: FlutterFlowTheme.of(context).primary,
                             fontSize: 18.0,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.normal,
                           ),
                     ),
@@ -113,6 +117,7 @@ class _ScanneddetailsWidgetState extends State<ScanneddetailsWidget> {
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Open Sans',
                             fontSize: 17.0,
+                            letterSpacing: 0.0,
                           ),
                     ),
                     Padding(
@@ -127,6 +132,7 @@ class _ScanneddetailsWidgetState extends State<ScanneddetailsWidget> {
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Open Sans',
                                       fontSize: 17.0,
+                                      letterSpacing: 0.0,
                                     ),
                           ),
                           Text(
@@ -139,6 +145,7 @@ class _ScanneddetailsWidgetState extends State<ScanneddetailsWidget> {
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Open Sans',
                                       fontSize: 17.0,
+                                      letterSpacing: 0.0,
                                     ),
                           ),
                         ].divide(const SizedBox(width: 5.0)),
@@ -160,6 +167,7 @@ class _ScanneddetailsWidgetState extends State<ScanneddetailsWidget> {
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Poppins',
+                                      letterSpacing: 0.0,
                                     ),
                           ),
                         ),
